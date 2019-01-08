@@ -22,25 +22,36 @@
 				"command": "atlasmap.open",
 				"title": "Open Atlas Map in default system browser",
 				"category": "Atlas Map"
+			},
+			{
+				"command": "atlasmap.start",
+				"title": "Start Atlas Map",
+				"category": "Atlas Map"
 			}
 		]
 	},
 	"activationEvents": [
-		"onCommand:atlasmap.open"
+		"onCommand:atlasmap.open",
+		"onCommand:atlasmap.start"
 	],
 	"scripts": {
 		"vscode:prepublish": "tsc -p ./",
 		"compile": "tsc -p ./",
 		"watch": "tsc -w -p ./",
-		"postinstall": "node ./node_modules/vscode/bin/install"
+		"postinstall": "node ./node_modules/vscode/bin/install",
+		"test": "node ./node_modules/vscode/bin/test",
+		"tslint": "gulp tslint"
 	},
 	"dependencies": {
+		"chunk": "^0.0.2",
 		"fetch": "^1.1.0",
-		"vscode": "^1.1.26",
-		"opn": "^5.4.0"
+		"opn": "^5.4.0",
+		"vscode": "^1.1.26"
 	},
 	"devDependencies": {
+		"@types/mocha": "^5.2.5",
 		"@types/node": "^10.12.18",
+		"mocha": "^5.2.0",
 		"tslint": "^5.12.0",
 		"typescript": "^3.2.2"
 	}
